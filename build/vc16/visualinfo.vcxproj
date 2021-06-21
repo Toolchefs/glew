@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <SccProjectName />
     <SccLocalPath />
-    <ProjectGuid>{8EFB5DCB-C0C4-1670-5938-A0E0F1A1C5EA}</ProjectGuid>
+    <ProjectGuid>{79AA8443-86F4-649A-0BEB-0CB5E51B7D7E}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -34,22 +34,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -77,35 +77,34 @@
     <OutDir>$(BIN_DIR)\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>tmp\$(TargetName)\$(Configuration)\$(PlatformName)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <TargetName>glewinfod</TargetName>
+    <TargetName>visualinfod</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(BIN_DIR)\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>tmp\$(TargetName)\$(Configuration)\$(PlatformName)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <TargetName>glewinfod</TargetName>
+    <TargetName>visualinfod</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(BIN_DIR)\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>tmp\$(TargetName)\$(Configuration)\$(PlatformName)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <TargetName>glewinfo</TargetName>
+    <TargetName>visualinfo</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(BIN_DIR)\$(Configuration)\$(PlatformName)\</OutDir>
     <IntDir>tmp\$(TargetName)\$(Configuration)\$(PlatformName)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <TargetName>glewinfo</TargetName>
+    <TargetName>visualinfo</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
     <OutDir>$(BIN_DIR)\$(Configuration)\$(PlatformName)\</OutDir>
-    <TargetName>glewinfo</TargetName>
+    <TargetName>visualinfo</TargetName>
     <IntDir>tmp\$(TargetName)\$(Configuration)\$(PlatformName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'">
-    <OutDir>$(BIN_DIR)\$(Configuration)\$(PlatformName)\</OutDir>
-    <TargetName>glewinfo</TargetName>
-    <IntDir>tmp\$(TargetName)\$(Configuration)\$(PlatformName)\</IntDir>
+    <OutDir>..\..\bin/</OutDir>
+    <TargetName>visualinfo</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -119,7 +118,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <Midl>
-      <TypeLibraryName>.\..\..\bin\glewinfo.tlb</TypeLibraryName>
+      <TypeLibraryName>.\..\..\bin\visualinfo.tlb</TypeLibraryName>
     </Midl>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -133,13 +132,13 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalDependencies>glew32sd.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32sd.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(LIB_DIR)\$(Configuration)\$(PlatformName)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <FunctionLevelLinking>false</FunctionLevelLinking>
       <Optimization>Disabled</Optimization>
@@ -149,7 +148,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <Midl>
-      <TypeLibraryName>.\..\..\bin\glewinfo.tlb</TypeLibraryName>
+      <TypeLibraryName>.\..\..\bin\visualinfo.tlb</TypeLibraryName>
     </Midl>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -163,7 +162,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalDependencies>glew32sd.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32sd.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(LIB_DIR)\$(Configuration)\$(PlatformName)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -179,7 +178,7 @@
       <PreprocessorDefinitions>WIN32;WIN32_LEAN_AND_MEAN;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Midl>
-      <TypeLibraryName>.\..\..\bin\glewinfo.tlb</TypeLibraryName>
+      <TypeLibraryName>.\..\..\bin\visualinfo.tlb</TypeLibraryName>
     </Midl>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -192,14 +191,14 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalDependencies>glew32s.lib;opengl32.lib;libvcruntime.lib;msvcrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32s.lib;glu32.lib;opengl32.lib;libvcruntime.lib;msvcrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
       <AdditionalLibraryDirectories>$(LIB_DIR)\$(Configuration)\$(PlatformName)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <StringPooling>true</StringPooling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -209,7 +208,7 @@
       <PreprocessorDefinitions>WIN32;WIN32_LEAN_AND_MEAN;GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Midl>
-      <TypeLibraryName>.\..\..\bin\glewinfo.tlb</TypeLibraryName>
+      <TypeLibraryName>.\..\..\bin\visualinfo.tlb</TypeLibraryName>
     </Midl>
     <ResourceCompile>
       <Culture>0x0409</Culture>
@@ -222,31 +221,31 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalDependencies>glew32s.lib;opengl32.lib;libvcruntime.lib;msvcrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32s.lib;glu32.lib;opengl32.lib;libvcruntime.lib;msvcrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
       <AdditionalLibraryDirectories>$(LIB_DIR)\$(Configuration)\$(PlatformName)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <ClCompile>
+    </ClCompile>
     <Link>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(LIB_DIR)\$(Configuration)\$(PlatformName)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32sd.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <ClCompile />
-    <ClCompile>
-    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'">
-    <Link>
-      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalLibraryDirectories>$(LIB_DIR)\$(Configuration)\$(PlatformName)\</AdditionalLibraryDirectories>
-    </Link>
-    <ClCompile />
     <ClCompile>
     </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalDependencies>glew32sd.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(LIB_DIR)\$(Configuration)\$(PlatformName)\</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\glewinfo.c" />
+    <ClCompile Include="..\..\src\visualinfo.c" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="glew_static.vcxproj">
@@ -254,7 +253,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\glewinfo.rc" />
+    <ResourceCompile Include="..\visualinfo.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
